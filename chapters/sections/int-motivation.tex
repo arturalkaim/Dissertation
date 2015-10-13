@@ -8,6 +8,8 @@ And this is observable in the graphic contents. With the recent extra high defin
 
 Graphic contents are mainly used for entertainment, both in the gaming and movie industries, but they are also used in many other different areas. The fields of architecture and design, for instance, use this technology to experiment and model new designs, from small objects like a plate, to buildings or even entire cities. Unfortunately, manual modeling of large sets of potentially complex shapes is tiresome and very costly. 
 
+Figure~\ref{fig:brickwall} is a wall that has a relatively large amount of objects (bricks). Here each brick has to be modeled one by one and positioned in its place. Which is rather complex because each brick has different positions and rotations. This example shows that from a set of simple objects, such as the ones that compose this model, a complex model can be produced, and the manual modeling of this type of models is a complex and time consuming process.
+
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.7\textwidth, trim = 20mm 25mm 80mm 28mm, clip]{images/parede-sin.png}
@@ -17,11 +19,11 @@ Graphic contents are mainly used for entertainment, both in the gaming and movie
 
 
 %In this field they also face the problems that raises from the modeling of really big sets of objects and forms manually, which is slow and error prone. 
-\emph{This work addresses the problem of large content creation and will focus on the fields of architecture and design.}
+%\emph{This work addresses the problem of large content creation and will focus on the fields of architecture and design.}
 
 The obvious solution to this problem is to hire more architects or designers in order to increase productivity and reduce the time needed. However, experience has shown that this solution is not scalable, i.e. doubling the number of architects or designers working in a project will not double their overall productivity. Also, this solution has a big impact on financial costs, that would take immediately out of the market producers with fewer resources.
 
-A solution for this problem is the use of \gls{GD}. It is a design method that is based on a programming approach which allows architects and designers to model large volumes of complex shapes with significantly less effort. They can model cities, buildings, trees, and many other objects that are, usually, too big or complex for a manual approach. Since the models are represented by a computer program, large volumes of geometry can be generated within short periods of time. This is positive to the users because it is more efficient than the manual approach, but, in the other hand, it imposes the use of machines with performance that can handle large amounts of geometry fast.
+A solution for this problem is the use of \gls{GD}. It is a design method that is based on a programming approach which allows architects and designers to model large volumes of complex shapes with significantly less effort. They can model cities, buildings, trees, and many other objects that are, usually, too big or complex for a manual approach. Since the models are represented by a computer program, large volumes of geometry can be generated within short periods of time. This is positive to the users because it is more efficient than the manual approach, but, in the other hand, it imposes the use of machines with performance that can handle large amounts of geometry fast. The brick wall model (Figure~\ref{fig:brickwall}) can be easily modeled, with a \gls{GD} approach by using a sinusoidal function for the positioning of the bricks. 
 
 Although most \gls{CAD} applications provide programming languages for generative design, programs written in these languages have very limited portability. Additionally, the provided languages, such as AutoLisp, C++ or Visual Basic, are not pedagogical and are difficult to use even to experienced programmers. All this problems create barriers to the adherence to this approach by all users, specially those that are not used to code.\cite{ramos_et_al:OASIcs:2014:4565}
 
