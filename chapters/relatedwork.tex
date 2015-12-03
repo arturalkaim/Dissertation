@@ -1,5 +1,41 @@
-%TEX root = ../dissertation.tex
+%!TEX root = ../dissertation.tex
 
 \chapter{Related Work}
 \label{chapter:relatedwork}
-Your chapter's content goes here.
+
+There are several techniques that have been developed and applied to face the performance problem that we have already explained. This section will describe some of those techniques. 
+
+This section will also present a number of systems that have goals that are similar with ours. They are good sources of ideas and points of comparison to evaluate our solution. The described systems are the most relevant ones, that take in consideration the field of architecture.
+
+\input{chapters/rw-sections/techniques}
+
+\input{chapters/rw-sections/undiscovered-city}
+\input{chapters/rw-sections/azuchi}
+\input{chapters/rw-sections/cads}
+\input{chapters/rw-sections/visualization-library}
+
+\input{chapters/rw-sections/rosetta}
+
+\section{Conclusion of related work} % (fold)
+\label{sec:conclusion_of_related_work}
+
+\begin{table}[h!]
+\centering
+
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tool Name}         & \textbf{Visualization Speed} & \textbf{Modeling Speed} & \textbf{Modeling} & \textbf{Interaction} & \textbf{Usability} \\ \hline
+\textbf{City Engine}       & Slow                         & Fast                    & Yes               & Total                & High               \\ \hline
+\textbf{\cite{fukuda2015}???} & Fast                      & -                       & None              & VR/Camera            & High               \\ \hline
+\textbf{Undiscovered City} & Fast                         & -                       & None              & Camera/None?         & -                  \\ \hline
+\textbf{CADs}              & Slow                         & Slow                    & Yes               & Total                & High               \\ \hline
+\textbf{VL}                & Fast                         & Fast                    & Yes               & Camera               & Low                \\ \hline
+\textbf{Rosetta - CADs}    & Slow                         & Fast                    & Yes               & Total                & High               \\ \hline
+\textbf{Rosetta - VL}      & Fast                         & Fast                    & Yes               & Camera               & High               \\ \hline
+\end{tabular}
+\caption{My caption}
+\label{my-label}
+\end{table}
+
+
+% section conclusion_of_related_work (end)
