@@ -55,4 +55,75 @@ Another technique that we implement, and the constant generation of the primitiv
 % subsection performance (end)
 
 
+\subsection{Transformation} % (fold)
+\label{sub:transformation}
+
+Since the objects are generated, we have to implement a transformation solution to generate the object correctly. We tested some options, having as a goal to minimize the number of data needed, this way diminishing the transported data.
+
+\subsubsection{Minimum data} % (fold)
+\label{ssub:minimum_data}
+
+First we tried to implement the transformation with the minimum possible data.
+
+Translations and scales can be trivially implemented. By centering the object at a desired point and by creating the objects with an unitary size and then multiplying by the scale, respectively. This two transformations used 3(three) floats each, 6(six) in total. 
+
+For the rotation we implemented the axis-angle representation\cite{curtright2014compact}. This way, we only use 4(four) floats, three for the axis of rotation $\phi$, and the angle $\theta$.
+
+We this solutions we could generate an object with the desired size, rotation and position. 
+
+It happened that the rotation had an issue. The rotation in the axis perpendicular to $\phi$ is undefined, when $\phi$ is not parallel to any of $xyz$ axis. 
+Another issue is that this solution is not cumulative. Meaning that we could not create an object and after that, apply any other transformation.
+
+This problems made us look for another solution.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.75\textwidth]{images/solution/Axis-Angle_Representation.png}
+	\caption{caption}
+	\label{fig:axis_angle}
+\end{figure}
+
+% subsubsection minimum_data (end)
+
+\subsubsection{Transformation Matrix} % (fold)
+\label{ssub:transformation_matrix}
+
+To solve the mentioned problems, we had to compromise on the used data. The previous solution used a total of ten floats to represent the data. 
+By using a $4\times4$ matrix we would use six more floats, and could solve both issues.
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.25\textwidth]{images/solution/Transformation_Matrix.png}
+	\caption{caption}
+	\label{fig:tmatrix}
+\end{figure}
+
+(...)
+
+% subsubsection transformation_matrix (end)
+
+
+
+% subsection transformation (end)
+
+\subsection{Adding Color} % (fold)
+\label{sub:adding_color}
+
+The assignment of color to the objects was a desired feature, to make \TheName more similar to the other systems. But since we want the minimum amount of data, just adding three more values to transport was not a good solution. To avoid that, we used the last line of the transformation matrix to transport the color values. Thus we could add a totally new feature without adding any more data to transport, just by better using the available space, as shown in Figure~\ref{fig:color_matrix}. This solution makes the data usage gap shorter between the option of having the transformation matrix, Section~\ref{ssub:transformation_matrix}, versus the minimum data option, Section~\ref{ssub:minimum_data}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.95\textwidth]{images/solution/Matrix+Color.png}
+	\caption{Transport of the transformation and color data}
+	\label{fig:color_matrix}
+\end{figure}
+
+% subsection adding_color (end)
+
+
+
+
+
+
 % section the_system (end)
